@@ -1,0 +1,14 @@
+<%= simple_form_for(@entry, as: :entry, url: entries_path) do |f| %>
+    <%= f.hidden_field :type, value: @entry.type %>
+
+    <%= f.input :termsofservice %>
+
+    <% @entry.class.content_attributes.each do |attr_name, attr_type| %>
+      <%= f.input attr_name, as: attr_type %>
+    <% end %>
+
+    <%= f.input :version %>
+
+    <%= f.submit "Save" %>
+  <% end %>
+<div id="live-preview" data-preview-url="<%= preview_path %>"></div>
