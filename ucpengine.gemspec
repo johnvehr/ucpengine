@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = Ucpengine::VERSION
   s.authors     = ["johnvehr"]
   s.email       = ["johnvehr@yahoo.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Ucpengine."
-  s.description = "TODO: Description of Ucpengine."
+  s.homepage    = ""
+  s.summary     = "Summary of Ucpengine."
+  s.description = "Description of Ucpengine."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
