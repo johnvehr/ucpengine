@@ -1,25 +1,25 @@
-<div class="row">
-  <div class="container">
+<div class="row tos-form">
+  <div class="col s6">
 <%= form_for(@entry, as: :entry, url: @entry.persisted? ? content_entry_path(@entry) : entries_path) do |f| %>
     <%= f.hidden_field :type, value: @entry.type %>
 
     <%= f.label :version %>
     <%= f.text_field :version %>
 
+    <!--
     <%= f.label :published_at %>
     <%= f.text_field :published_at %>
+    -->
 
-    <%= f.label :termsofservice %>
-    <%= f.text_field :termsofservice %>
-
+    <p>Terms of Service</p>
     <% @entry.class.content_attributes.each do |attr_name, attr_type| %>
-      <%= f.text_field attr_name, as: attr_type %>
+      <%= f.text_area attr_name, as: attr_type %>
     <% end %>
-
-
-
     <%= f.submit "Save" %>
   <% end %>
+</div>
+<div class="col s5">
+  <p>Terms of Service Preview</p>
 <div id="live-preview" data-preview-url="<%= preview_path %>"></div>
 </div>
 </div>

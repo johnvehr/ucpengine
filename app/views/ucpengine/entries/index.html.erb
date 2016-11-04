@@ -1,13 +1,10 @@
-<%= content_class.tableize.titleize %>
-
-  <%= link_to "New #{content_class.titleize}", new_content_entry_path, class: 'btn btn-primary space-2' %>
-
-  <ul class="collection">
+<ul class="collection with-header">
+    <li class="collection-header"><h4>Recent Terms of Service <br><%= link_to "New #{content_class.titleize}", new_content_entry_path %></h4></li>
     <% @entries.each do |entry| %>
     <li class="collection-item">
-      <%= link_to entry.termsofservice, content_entry_path(entry) %>
-      <%= time_ago_in_words entry.created_at %> ago
-      <%= entry.version %>
+      Version: <%= link_to entry.version, content_entry_path(entry) %>
+      Created <%= time_ago_in_words entry.created_at %> ago
+
       <%= link_to 'Edit', edit_content_entry_path(entry) %>
       <%= link_to 'Destroy', content_entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' } %>
     </li>
