@@ -4,17 +4,36 @@
   <title>Ucpengine</title>
   <%= stylesheet_link_tag    "ucpengine/application", media: "all" %>
   <%= javascript_include_tag "ucpengine/application" %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <ul>
-      <% Ucpengine.configuration.content_classes.each do |class_name| %>
-        <li>
-          <%= link_to class_name.tableize.titleize, entries_path(content_class: class_name.tableize) %>
-        </li>
-      <% end %>
-    </ul>
-<%= yield %>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo"><img src="http://www.unitedcp.com/wp-content/uploads/logo.png"></a>
+      </div>
+    </nav>
+  </div>
+  <div class="row">
 
+     <div class="col s3 ucp-sidenav">
+    
+           <p class="ucp-title">UCP cms Dashboard</p>
+
+       <ul class="collection">
+           <% Ucpengine.configuration.content_classes.each do |class_name| %>
+             <li class="collection-item sidenav-item">
+               <%= link_to 'Terms of Service', entries_path(content_class: class_name.tableize) %>
+             </li>
+           <% end %>
+         </ul>
+     </div>
+
+     <div class="col s9">
+
+<%= yield %>
+</div>
+</div>
 </body>
 </html>

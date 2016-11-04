@@ -1,6 +1,6 @@
 module Ucpengine
   class Entry < ActiveRecord::Base
-    #scope :published, -> { where('published_at <= ?', Time.zone.now) }
+    scope :published, -> { where('published_at <= ?', Time.zone.now) }
     include Ucpengine::Concerns::Searchable
     def self.content_attr(attr_name, attr_type = :string)
       content_attributes[attr_name] = attr_type

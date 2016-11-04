@@ -5,7 +5,7 @@ module Ucpengine
 
       included do
         has_many :search_data, class_name: 'Ucpengine::EntrySearchData'
-        after_save :update_search_index
+        #after_save :update_search_index
       end
 
       def searchable_attributes(*args)

@@ -48,7 +48,7 @@ module Ucpengine
    end
 
    def entry_params
-     allowed_attrs = %i(id type termsofservice version)
+     allowed_attrs = %i(id type termsofservice version slug published_at)
        .concat(content_class.constantize.content_attributes.keys)
 
      params.require(:entry).permit(*allowed_attrs)

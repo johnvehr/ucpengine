@@ -28,6 +28,8 @@ Gem::Specification.new do |s|
   s.add_dependency "autoprefixer-rails"
   s.add_dependency "simple_form", "~>3.1.0"
 
+  s.add_dependency "materialize-sass"
+
   s.add_dependency "pygments.rb"
   s.add_dependency "redcarpet"
 

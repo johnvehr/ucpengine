@@ -1,0 +1,61 @@
+.navbar-fixed{
+  height:50px !important;
+}
+nav {
+  height:50px !important;
+  background-color: #FFF!important;
+  .brand-logo{
+    padding:5px !important;
+    font-size:1rem !important;
+    img{
+      max-width: 200px !important;
+    }
+  }
+}
+
+.collection{border:none !important;}
+.sidenav-item{
+  background-color:#ececec  !important;
+  a{
+    color:#202c31;
+    font-size:1.2em;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+}
+.row{
+  height:1200px;
+  .col{
+    padding:0 !important;
+  }
+}
+.ucp-sidenav{
+  height:100%;
+    background:#ececec;
+}
+
+  .ucp-title{
+    text-align: center;
+    font-size:1.2em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    background: #202c31;
+    color:#FFF;
+    padding: 18px;
+    margin-top: 0;
+  }
+
+.btn{
+  background-color:#4a6471 !important;
+}
+
+.dashboard-welcome{
+  text-align:center;
+  padding-top:250px;
+  p{
+    font-size: 1.8em;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color:#28343a;
+  }
+}

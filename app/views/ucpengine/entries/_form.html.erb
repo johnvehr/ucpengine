@@ -1,14 +1,25 @@
-<%= simple_form_for(@entry, as: :entry, url: entries_path) do |f| %>
+<div class="row">
+  <div class="container">
+<%= form_for(@entry, as: :entry, url: @entry.persisted? ? content_entry_path(@entry) : entries_path) do |f| %>
     <%= f.hidden_field :type, value: @entry.type %>
 
-    <%= f.input :termsofservice %>
+    <%= f.label :version %>
+    <%= f.text_field :version %>
+
+    <%= f.label :published_at %>
+    <%= f.text_field :published_at %>
+
+    <%= f.label :termsofservice %>
+    <%= f.text_field :termsofservice %>
 
     <% @entry.class.content_attributes.each do |attr_name, attr_type| %>
-      <%= f.input attr_name, as: attr_type %>
+      <%= f.text_field attr_name, as: attr_type %>
     <% end %>
 
-    <%= f.input :version %>
+
 
     <%= f.submit "Save" %>
   <% end %>
 <div id="live-preview" data-preview-url="<%= preview_path %>"></div>
+</div>
+</div>
