@@ -22,7 +22,8 @@ module Ucpengine
      @entry = Entry.new(entry_params)
 
      if @entry.save
-       redirect_to content_entry_path(@entry), notice: 'Entry was successfully created.'
+       #redirect_to content_entry_path(@entry), notice: 'Entry was successfully created.'
+       redirect_to content_entries_path, notice: 'Entry was successfully created.'
      else
        render :new
      end
