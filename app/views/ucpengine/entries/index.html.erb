@@ -1,5 +1,5 @@
 <ul class="collection with-header">
-    <li class="collection-header"><h4>Recent Terms of Service <br><%= link_to "New #{content_class.titleize}", new_content_entry_path %></h4></li>
+    <li class="collection-header"><h4>Recent Terms of Service</h4> <br><%= link_to "New #{content_class.titleize}", new_content_entry_path %></li>
     <% @entries.each do |entry| %>
     <li class="collection-item">
       Version: <%= link_to entry.version, content_entry_path(entry) %>

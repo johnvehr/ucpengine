@@ -12,14 +12,23 @@
     -->
 
     <p>Terms of Service</p>
-    <% @entry.class.content_attributes.each do |attr_name, attr_type| %>
-      <%= f.text_area attr_name, as: attr_type %>
-    <% end %>
-    <%= f.submit "Save" %>
+
+      <div class="input-field col s12">
+        <% @entry.class.content_attributes.each do |attr_name, attr_type| %>
+          <%= f.text_area attr_name, as: attr_type, class: 'materialize-textarea' %>
+        <% end %>
+      </div>
+
+    <%= f.submit "Create and Save", class: 'btn' %>
   <% end %>
 </div>
 <div class="col s5">
-  <p>Terms of Service Preview</p>
+  <p>Preview</p>
 <div id="live-preview" data-preview-url="<%= preview_path %>"></div>
 </div>
 </div>
+
+<script type="text/javascript">
+  $('#textarea1').val('New Text');
+  $('#textarea1').trigger('autoresize');
+</script>
