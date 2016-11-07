@@ -10,12 +10,9 @@
     <%= f.label :published_at %>
     <%= f.text_field :published_at %>
     -->
-
-    <p>Terms of Service</p>
-
       <div class="input-field col s12">
         <% @entry.class.content_attributes.each do |attr_name, attr_type| %>
-          <%= f.text_area attr_name, as: attr_type, class: 'materialize-textarea' %>
+          <%= f.text_area attr_name, as: attr_type, class: 'materialize-textarea', placeholder: 'Terms of Service' %>
         <% end %>
       </div>
 

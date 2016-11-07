@@ -1,12 +1,18 @@
-<ul class="collection with-header">
-    <li class="collection-header"><h4>Recent Terms of Service</h4> <br><%= link_to "New #{content_class.titleize}", new_content_entry_path %></li>
+<table class="highlight">
+  <thead>
+    <tr>
+      <th>Version</th>
+      <th>Created</td>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
     <% @entries.each do |entry| %>
-    <li class="collection-item">
-      Version: <%= link_to entry.version, content_entry_path(entry) %>
-      Created <%= time_ago_in_words entry.created_at %> ago
-
-      <%= link_to 'Edit', edit_content_entry_path(entry) %>
-      <%= link_to 'Destroy', content_entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </li>
+    <tr>
+      <td><%= link_to entry.version, content_entry_path(entry) %></td>
+      <td><%= time_ago_in_words entry.created_at %> ago</td>
+      <td><%= link_to 'Edit', edit_content_entry_path(entry) %>
+      <%= link_to 'Destroy', content_entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
-  </ul>
+</table>

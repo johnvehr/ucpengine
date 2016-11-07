@@ -20,12 +20,12 @@
 
      <div class="col s3 ucp-sidenav">
 
-           <p class="ucp-title">UCP cms Dashboard</p>
+           <p class="ucp-title">UCP cms</p>
 
        <ul class="collection">
            <% Ucpengine.configuration.content_classes.each do |class_name| %>
              <li class="collection-item sidenav-item">
-               <%= link_to 'Terms of Service', entries_path(content_class: class_name.tableize) %>
+               <%= link_to 'Terms of Service Dashboard', entries_path(content_class: class_name.tableize) %>
              </li>
            <% end %>
          </ul>
