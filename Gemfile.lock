@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ucpengine (0.0.4)
+    ucpengine (0.0.5)
       autoprefixer-rails
       bcrypt (~> 3.1.7)
       font-awesome-rails
