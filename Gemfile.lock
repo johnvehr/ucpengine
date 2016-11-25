@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ucpengine (0.0.6)
+    ucpengine (0.0.7)
       autoprefixer-rails
       bcrypt (~> 3.1.7)
       font-awesome-rails
@@ -149,3 +149,6 @@ PLATFORMS
 DEPENDENCIES
   pg
   ucpengine!
+
+BUNDLED WITH
+   1.13.6
