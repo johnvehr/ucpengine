@@ -25,13 +25,13 @@
        <ul class="collection">
            <% Ucpengine.configuration.content_classes.each do |class_name| %>
              <li class="collection-item sidenav-item">
-               <%= link_to 'Terms of Service Dashboard', entries_path(content_class: class_name.tableize) %>
+               <%= link_to 'Service Dashboard', entries_path(content_class: class_name.tableize) %>
              </li>
            <% end %>
          </ul>
      </div>
 
-     <div class="col s9">
+     <div class="col s9 ucp-inner-content">
 
 <%= yield %>
 </div>

@@ -1,20 +1,97 @@
+<div class="row">
+  <div class="col s12 ucp-inner-content-header">
+    <%= link_to "New Service Post", new_content_entry_path, class: 'btn' %>
+  </div>
+  <div class="col s12">
 
-<table class="highlight">
-  <%= link_to "New #{content_class.titleize}", new_content_entry_path %>
-  <thead>
-    <tr>
-      <th>Version</th>
-      <th>Created</td>
-      <th>Options</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @entries.each do |entry| %>
-    <tr>
-      <td><%= link_to entry.version, content_entry_path(entry) %></td>
-      <td><%= time_ago_in_words entry.created_at %> ago</td>
-      <td><%= link_to 'Edit', edit_content_entry_path(entry) %>
-      <%= link_to 'Destroy', content_entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% end %>
-</table>
+    <ul class="tabs">
+      <li class="tab col s3"><a href="#terms_of_use">Terms of Use <span class="new badge"><%= @terms_of_use.count %></span></a></li>
+      <li class="tab col s3"><a href="#third_party_terms_of_use">Third Party Terms of Use <span class="new badge"><%= @terms_of_use.count %></a></li>
+      <li class="tab col s3"><a href="#privacy_policy">Privacy Policy <span class="new badge"><%= @terms_of_use.count %></a></li>
+      <li class="tab col s3"><a href="#glba_privacy_policy">GLBA Privacy Policy <span class="new badge"><%= @terms_of_use.count %></a></li>
+    </ul>
+  </div>
+  <div id="terms_of_use" class="col s12 inner-content-table">
+    <table class="highlight">
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>Created</td>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @terms_of_use.each do |entry| %>
+        <tr>
+          <td><%= link_to entry.version, content_entry_path(entry) %></td>
+          <td><%= time_ago_in_words entry.created_at %> ago</td>
+          <td><%= link_to 'Edit', edit_content_entry_path(entry) %>
+          <%= link_to 'Destroy', content_entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+    </table>
+  </div>
+  <div id="third_party_terms_of_use" class="col s12">
+    <table class="highlight">
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>Created</td>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= @third_party_terms_of_use.count %>
+        <% @third_party_terms_of_use.each do |entry| %>
+        <tr>
+          <td><%= link_to entry.version, content_entry_path(entry) %></td>
+          <td><%= time_ago_in_words entry.created_at %> ago</td>
+          <td><%= link_to 'Edit', edit_content_entry_path(entry) %>
+          <%= link_to 'Destroy', content_entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+    </table>
+  </div>
+  <div id="privacy_policy" class="col s12">
+    <table class="highlight">
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>Created</td>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= @privacy_policy.count %>
+        <% @privacy_policy.each do |entry| %>
+        <tr>
+          <td><%= link_to entry.version, content_entry_path(entry) %></td>
+          <td><%= time_ago_in_words entry.created_at %> ago</td>
+          <td><%= link_to 'Edit', edit_content_entry_path(entry) %>
+          <%= link_to 'Destroy', content_entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+    </table>
+  </div>
+  <div id="glba_privacy_policy" class="col s12">
+    <table class="highlight">
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>Created</td>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= @privacy_policy.count %>
+        <% @privacy_policy.each do |entry| %>
+        <tr>
+          <td><%= link_to entry.version, content_entry_path(entry) %></td>
+          <td><%= time_ago_in_words entry.created_at %> ago</td>
+          <td><%= link_to 'Edit', edit_content_entry_path(entry) %>
+          <%= link_to 'Destroy', content_entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+    </table>
+  </div>
+</div>

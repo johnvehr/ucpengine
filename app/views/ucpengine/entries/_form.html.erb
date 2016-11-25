@@ -1,22 +1,21 @@
 <div class="row tos-form">
   <div class="col s6">
-<%= form_for(@entry, as: :entry, url: @entry.persisted? ? content_entry_path(@entry) : entries_path) do |f| %>
+<%= simple_form_for(@entry, as: :entry, url: @entry.persisted? ? content_entry_path(@entry) : entries_path) do |f| %>
     <%= f.hidden_field :type, value: @entry.type %>
 
-    <%= f.label :version %>
-    <%= f.text_field :version %>
-
+    <%= f.datetime_field :version %>
+    <%= f.input :service_type, collection: ['Terms of Use', 'Third Party Terms of Use', 'Privacy Policy', 'GLBA Privacy Policy'], prompt: 'Select Service Type' %>
     <!--
     <%= f.label :published_at %>
     <%= f.text_field :published_at %>
     -->
       <div class="input-field col s12">
         <% @entry.class.content_attributes.each do |attr_name, attr_type| %>
-          <%= f.text_area attr_name, as: attr_type, class: 'materialize-textarea', placeholder: 'Terms of Service' %>
+          <%= f.text_area attr_name, as: attr_type, class: 'materialize-textarea', placeholder: 'New Service Agreement' %>
         <% end %>
       </div>
 
-    <%= f.submit "Create and Save", class: 'btn' %>
+    <%= f.button :submit %>
   <% end %>
 </div>
 <div class="col s5">

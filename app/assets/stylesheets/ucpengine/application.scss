@@ -25,11 +25,47 @@ nav {
 }
 .row{
   height:1200px;
-  .col{
-    padding:0 !important;
+}
+.ucp-inner-content{
+  padding:0 !important;
+  .inner-content-table{
+    padding-top:40px;
   }
 }
+.ucp-inner-content-header{
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  //height:40px;
+  padding:15px !important;
+  background:#FAFAFA;
+  .btn {
+    font-size:0.8em;
+    letter-spacing:2px;
+    height:25px;
+    line-height:25px;
+    float:right;
+  }
+}
+.tabs {
+  .tab{
+    a{
+      letter-spacing:1px;
+      font-size:0.8em !important;
+      color:rgba(32, 44, 49, 0.57) !important;
+    }
+    a.active{
+      color:#202c31 !important;
+    }
+  }
+}
+.indicator{
+  bottom:4px;
+  background-color:rgba(32, 44, 49, 0.57) !important;
+}
+.badge{
+  background-color:#81a6a6 !important;
+}
 .ucp-sidenav{
+  padding:0 !important;
   height:100%;
     background:#ececec ;
 }
