@@ -35,7 +35,7 @@ nav {
 .ucp-inner-content-header{
   border-bottom: 1px solid rgba(128, 128, 128, 0.15);
   //height:40px;
-  padding:15px !important;
+  padding:19px !important;
   background:#FAFAFA;
   .btn {
     font-size:0.8em;
@@ -61,9 +61,21 @@ nav {
   bottom:4px;
   background-color:rgba(32, 44, 49, 0.57) !important;
 }
-.badge{
-  background-color:#81a6a6 !important;
+.ucp-tabs{
+  background:#ececec;
 }
+.tabs{
+  background-color: transparent !important;
+}
+th{
+  font-weight:300;
+}
+.badge-green {background-color: rgba(0, 181, 0,1) !important;}
+.badge-blue {background-color: #1395a6 !important;}
+.badge-purple {background-color: #657eb5 !important; }
+.badge-light {background-color: #5bae76 !important;}
+
+
 .ucp-sidenav{
   padding:0 !important;
   height:100%;

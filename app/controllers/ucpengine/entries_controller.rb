@@ -8,7 +8,8 @@ module Ucpengine
      @entries = Entry.where(type: content_class)
      @terms_of_use = Entry.where(service_type: 'Terms of Use')
      @third_party_terms_of_use = Entry.where(service_type: 'Third Party Terms of Use')
-     @privacy_policy = Entry.where(service_type: 'Privacy_policy')
+     @privacy_policy = Entry.where(service_type: 'Privacy Policy')
+     @glba_privacy_policy = Entry.where(service_type: 'GLBA Privacy Policy')
    end
 
    def show

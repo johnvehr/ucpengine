@@ -2,13 +2,13 @@
   <div class="col s12 ucp-inner-content-header">
     <%= link_to "New Service Post", new_content_entry_path, class: 'btn' %>
   </div>
-  <div class="col s12">
+  <div class="col s12 ucp-tabs">
 
     <ul class="tabs">
-      <li class="tab col s3"><a href="#terms_of_use">Terms of Use <span class="new badge"><%= @terms_of_use.count %></span></a></li>
-      <li class="tab col s3"><a href="#third_party_terms_of_use">Third Party Terms of Use <span class="new badge"><%= @terms_of_use.count %></a></li>
-      <li class="tab col s3"><a href="#privacy_policy">Privacy Policy <span class="new badge"><%= @terms_of_use.count %></a></li>
-      <li class="tab col s3"><a href="#glba_privacy_policy">GLBA Privacy Policy <span class="new badge"><%= @terms_of_use.count %></a></li>
+      <li class="tab col s3"><a href="#terms_of_use">Terms of Use <span class="new badge badge-blue"><%= @terms_of_use.count %></span></a></li>
+      <li class="tab col s3"><a href="#third_party_terms_of_use">Third Party Terms of Use <span class="new badge badge-green"><%= @third_party_terms_of_use.count %></span></a></li>
+      <li class="tab col s3"><a href="#privacy_policy">Privacy Policy <span class="new badge badge-purple"><%= @privacy_policy.count %></a></li>
+      <li class="tab col s3"><a href="#glba_privacy_policy">GLBA Privacy Policy <span class="new badge badge-light"><%= @glba_privacy_policy.count %></a></li>
     </ul>
   </div>
   <div id="terms_of_use" class="col s12 inner-content-table">
@@ -41,7 +41,6 @@
         </tr>
       </thead>
       <tbody>
-        <%= @third_party_terms_of_use.count %>
         <% @third_party_terms_of_use.each do |entry| %>
         <tr>
           <td><%= link_to entry.version, content_entry_path(entry) %></td>
@@ -62,7 +61,6 @@
         </tr>
       </thead>
       <tbody>
-        <%= @privacy_policy.count %>
         <% @privacy_policy.each do |entry| %>
         <tr>
           <td><%= link_to entry.version, content_entry_path(entry) %></td>
@@ -83,8 +81,7 @@
         </tr>
       </thead>
       <tbody>
-        <%= @privacy_policy.count %>
-        <% @privacy_policy.each do |entry| %>
+        <% @glba_privacy_policy.each do |entry| %>
         <tr>
           <td><%= link_to entry.version, content_entry_path(entry) %></td>
           <td><%= time_ago_in_words entry.created_at %> ago</td>
