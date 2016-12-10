@@ -5,7 +5,7 @@ module Ucpengine
     before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
    def index
-     @entries = Entry.where(type: content_class)
+     @entries = Entry.where(content_type: content_class)
      @terms_of_use = Entry.where(service_type: 'Terms of Use')
      @third_party_terms_of_use = Entry.where(service_type: 'Third Party Terms of Use')
      @privacy_policy = Entry.where(service_type: 'Privacy Policy')
@@ -16,7 +16,7 @@ module Ucpengine
    end
 
    def new
-     @entry = Entry.new(type: content_class)
+     @entry = Entry.new(content_type: content_class)
    end
 
    def edit
@@ -53,7 +53,7 @@ module Ucpengine
    end
 
    def entry_params
-     allowed_attrs = %i(id type service_body service_type version slug published_at)
+     allowed_attrs = %i(id content_type service_body service_type version slug published_at)
        .concat(content_class.constantize.content_attributes.keys)
 
      params.require(:entry).permit(*allowed_attrs)
