@@ -1,7 +1,7 @@
 <div class="row tos-form">
   <div class="col s6">
 <%= simple_form_for(@entry, as: :entry, url: @entry.persisted? ? content_entry_path(@entry) : entries_path) do |f| %>
-    <%= f.hidden_field :type, value: @entry.type %>
+    <%= f.hidden_field :content_type, value: @entry.content_type %>
 
     <%= f.datetime_field :version %>
     <%= f.input :service_type, collection: ['Terms of Use', 'Third Party Terms of Use', 'Privacy Policy', 'GLBA Privacy Policy'], prompt: 'Select Service Type' %>
